@@ -2,6 +2,9 @@
 # Under the MIT License
 # Copyright (c) 2021 Antonin Hérault
 
+from sdymh.vectors import Vector
+from sdymh.plane_geom import Point
+
 # Just a simple function to say thank you for this project
 # Link to "buy my coffee" in the response
 def thank_you():

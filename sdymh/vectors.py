@@ -38,12 +38,18 @@ def det(vec1: Vector, vec2: Vector):
 def print_table(vectors, colored=True):
     print("\t\t|", end="")
     for vector in vectors:
-        print(f"\t\x1b[31m{vector.name}\x1b[0m\t| ", end="")
+        if colored:
+            print(f"\t\x1b[31m{vector.name}\x1b[0m\t| ", end="")
+        else:
+            print(f"\t{vector.name}\t| ", end="")
 
     print()
 
     for vector in vectors:
-        print(f"\t\x1b[31m{vector.name}\x1b[0m\t| ", end="")
+        if colored:
+            print(f"\t\x1b[31m{vector.name}\x1b[0m\t| ", end="")
+        else:
+            print(f"\t{vector.name}\t| ", end="")
 
         for vector2 in vectors:
             result = det(vector, vector2)
