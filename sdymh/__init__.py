@@ -2,8 +2,11 @@
 # Under the MIT License
 # Copyright (c) 2021 Antonin Hérault
 
+import math
+
+# Importations to use with directly a class name : "sdymh.ClassName()"
 from sdymh.vectors import Vector
-from sdymh.plane_geom import Point
+from sdymh.plane_geom import Point 
 
 # Just a simple function to say thank you for this project
 # Link to "buy my coffee" in the response
@@ -11,7 +14,7 @@ def thank_you():
     print("""
     You have executed : sdymh.thank_you()\n
     You're welcome !!
-    If you could, buy my coffee by accessing to this link :
+    If you can, buy my coffee by accessing to this link :
     https://www.buymeacoffee.com/antoninhrlt
     Good luck in your studies, thank to you for using my tool collection :)
     """)

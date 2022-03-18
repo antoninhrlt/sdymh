@@ -2,9 +2,11 @@
 # Under the MIT License
 # Copyright (c) 2021 Antonin Hérault
 
+import sdymh
+
 # Simple class to create a mathemetical vector with a name and its position
 # in the plan
-# NOTE : Could be called as `sdymh.Vector()`
+# NOTE : Can be called as `sdymh.Vector()`
 #
 # Example : 
 # ```py
@@ -22,12 +24,34 @@ class Vector:
         self.x = x
         self.y = y
 
+    def __repr__(self):
+        return f"vector {self.name}({self.x}, {self.y})"
+
+
+# Return a boolean expression according to if the point is shared between 
+# two vectors
+# AB, AC => yes, A
+# AB, CD => no
+# AB, CA => yes, A
+def shared_point_between_two(vec1: Vector, vec2: Vector):
+    if vec1.x == vec2.x or vec1.y == vec2.y or vec1.x == vec2.y or vec1.y == vec2.x:
+        return True
+
+    return False
+
 
 # Get the determinant between two vectors
 # https://math.stackexchange.com/questions/3141770/what-is-the-determinant-of-two-vectors
-def det(vec1: Vector, vec2: Vector):
-    return vec2.x * vec2.y - vec1.x * vec1.y
+def det(vec1: Vector, vec2: Vector, print_properties=False):
+    ret = vec2.x * vec2.y - vec1.x * vec1.y
 
+    if print_properties:
+        if shared_point_between_two(vec1, vec2): 
+            print(f"{vec1} and {vec2} have three shared aligned points")
+        else:
+            print(f"{vec1} and {vec2} are parallel")
+    
+    return ret
 
 # Print a table with the determinants of a list of vectors
 # The table uses colors for the vector names, if this raises some display bugs

@@ -5,7 +5,7 @@
 import math
 
 # Simple class for a 2D point in a plan
-# NOTE : Could be called as `sdymh.Point()`
+# NOTE : Can be called as `sdymh.Point()`
 class Point:
     def __init__(self, x: float, y: float):
         self.x = x
