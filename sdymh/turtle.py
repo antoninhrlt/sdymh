@@ -6,8 +6,9 @@ from turtle import clear as tclear
 from turtle import *
 
 # Init a window for all functions
-shape("turtle")
-screensize(1000, 1000)
+def init():
+    shape("turtle")
+    screensize(1000, 1000)
 
 
 # Print a square on the turtle window

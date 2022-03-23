@@ -28,30 +28,16 @@ class Vector:
         return f"vector {self.name}({self.x}, {self.y})"
 
 
-# Return a boolean expression according to if the point is shared between 
-# two vectors
-# AB, AC => yes, A
-# AB, CD => no
-# AB, CA => yes, A
-def shared_point_between_two(vec1: Vector, vec2: Vector):
-    if vec1.x == vec2.x or vec1.y == vec2.y or vec1.x == vec2.y or vec1.y == vec2.x:
-        return True
-
-    return False
-
-
 # Get the determinant between two vectors
 # https://math.stackexchange.com/questions/3141770/what-is-the-determinant-of-two-vectors
 def det(vec1: Vector, vec2: Vector, print_properties=False):
-    ret = vec2.x * vec2.y - vec1.x * vec1.y
-
     if print_properties:
-        if shared_point_between_two(vec1, vec2): 
-            print(f"{vec1} and {vec2} have three shared aligned points")
+        if det(vec1, vec2) == 0: 
+            print(f"{vec1} and {vec2} are parallels, they are collinears")
         else:
-            print(f"{vec1} and {vec2} are parallel")
+            print(f"{vec1} and {vec2} are not parallels, not collinears")
     
-    return ret
+    return vec1.x * vec2.y - vec1.y * vec2.x
 
 
 # Print a table with the determinants of a list of vectors

@@ -56,6 +56,7 @@ def mul_table(n, to=10, printing=True):
             numbers += i * n
     return numbers
 
+
 # Calculate the IMC of a person with their weight and height
 # If your height is "1m80" in real life, please give "1.80" as parameter
 def imc(weight: float, height: float):
