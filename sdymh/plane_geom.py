@@ -29,3 +29,8 @@ def segment_middle(a: Point, b: Point):
 # sqrt((xb - xa)^2 + (yb - ya)^2)
 def distance(a: Point, b: Point):
     return math.sqrt((b.x - a.x) ** 2 + (b.y - a.y) ** 2)
+
+
+# Perimeter of a triangle of size (l x L)
+def perimeter(l, L):
+    return (l + L) * 2

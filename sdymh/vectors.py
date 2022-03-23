@@ -53,6 +53,7 @@ def det(vec1: Vector, vec2: Vector, print_properties=False):
     
     return ret
 
+
 # Print a table with the determinants of a list of vectors
 # The table uses colors for the vector names, if this raises some display bugs
 # in your terminal, you should call this function with parameter `colored` set
