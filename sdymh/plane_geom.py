@@ -11,6 +11,9 @@ class Point:
         self.x = x
         self.y = y
 
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
+
 
 # Return the coordinates of segment middle thanks to two starting point 
 # Formula :
