@@ -5,6 +5,7 @@
 import math
 
 # Importations to use with directly a class name : "sdymh.ClassName()"
+import sdymh.stats
 import sdymh.functions
 from sdymh.plane_geom import Point
 import sdymh.turtle 
