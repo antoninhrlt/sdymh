@@ -7,17 +7,51 @@ sdymh.thank_you() # :)
 ```
 
 ## Installation
-Like the majority of the students, you do not have `git` and you just 
-discovered it when you saw this page. No problem, you can download the project
-easily by [clicking here](https://github.com/antoninhrlt/sdymh/archive/refs/heads/main.zip). 
-This will give you a "zip" file, decompress it[¿](https://www.youtube.com/watch?v=HLBSS3JjAh0).
+If you don't know what is programming, try with [this method](#installation-for-newbies).
 
-I wanted to make something easy-to-use for any student, so I did not make 
-something like a library to download with `pip`... \
-It's simple : open the `use.py` file at the directory's root, and then you can 
-use "sdymh", run what you did by entering this line in your command prompt[¿](https://www.youtube.com/watch?v=uE9WgNr3OjM) 
-: `python3 use.py`[¿](#i-do-not-have-python) 
+Be sure you installed Python 3 and Git. \
+Clone the repository : `git clone https://github.com/antoninhrlt/sdymh`
 
-## I do not have Python
-No problem, in Windows 10, open the Microsoft Store, type "python 3" in the 
-search bar, select the latest version, and click to "install". or go [here](https://python.org).
+## Usage
+> You will probably need to install dependencies by running `pip3 install -r requirements.txt`
+> 
+After sdymh has been installed, we can now use it. I made a file to simplify 
+everything for everyone, open `use.py` in your favorite editor, **do not delete
+the current content**, and start calling super sdymh functions :)
+
+To run what you did, type : `python3 use.py` in your command shell.
+
+> Let's check the [wiki](https://github.com/antoninhrlt/sdymh/wiki) to know
+> which functions to call
+
+ - ## Example
+    ```py
+    ...
+
+    values = [
+        1.86, 1.88, 1.84, 1.84, 
+        1.90, 1.88, 1.88, 1.88, 
+        1.86, 1.86, 1.88, 1.86, 
+        1.84, 1.86, 1.88
+    ]
+
+    sdymh.stats.generate_headcount_table(values)
+    ```
+    Will be show you, this :
+    ```
+    value           | 1.84  | 1.86  | 1.88  | 1.9   | total | 
+    headcount       | 3     | 5     | 6     | 1     | 15    |
+    ```
+
+## Installation for newbies
+At first, we need to install the "Python" program, don't worry, it's simple.
+On Windows 10, open the Microsoft Store, type "python 3" in the search bar, 
+select the latest version, and click to "install" or go [here](https://python.org).
+
+Open the Windows command shell : *Windows logo key* + R, and then type "cmd". \
+Check if python is installed by writing : `python3 --version`.
+
+If not, try another way to install Python (Google is here to help you or submit
+an issue on this repository to get help)
+
+Congratulations ! Now, check [usage](#usage).
