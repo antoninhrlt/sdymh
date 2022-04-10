@@ -35,12 +35,12 @@ To run what you did, type : `python3 use.py` in your command shell.
         1.84, 1.86, 1.88
     ]
 
-    sdymh.stats.generate_headcount_table(values)
+    sdymh.stats.generate_frequency_table(values)
     ```
     Will be show you, this :
     ```
     value           | 1.84  | 1.86  | 1.88  | 1.9   | total | 
-    headcount       | 3     | 5     | 6     | 1     | 15    |
+    frequency       | 3     | 5     | 6     | 1     | 15    |
     ```
 
 ## Installation for newbies

@@ -2,11 +2,11 @@
 # Under the MIT License
 # Copyright (c) 2021 Antonin Hérault
 
-def generate_headcount_table(values):
+def generate_frequency_table(values):
     values.sort()
     
     value_titles = []
-    headcounts: dict = {}
+    frequencies: dict = {}
     
     for value in values:
         if value not in value_titles:
@@ -14,11 +14,11 @@ def generate_headcount_table(values):
 
         count = 1
         try:
-            count = headcounts[value] + 1
+            count = frequencies[value] + 1
         except KeyError:
             pass
 
-        headcounts.update({value: count})
+        frequencies.update({value: count})
     
     value_titles.append("total")
 
@@ -26,11 +26,11 @@ def generate_headcount_table(values):
     for title in value_titles:
         print(f"{title}\t|", end=" ")
     
-    print("\nheadcount\t|", end=" ")
+    print("\nfrequency\t|", end=" ")
 
     total = 0
-    for key in headcounts:
-        r = headcounts[key]
+    for key in frequencies:
+        r = frequencies[key]
         print(f"{r}\t|", end=" ")
         total += r
     
