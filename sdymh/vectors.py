@@ -2,6 +2,7 @@
 # Under the MIT License
 # Copyright (c) 2021 Antonin Hérault
 
+import math
 import sdymh
 
 # Simple class to create a mathemetical vector with a name and its position
@@ -26,6 +27,27 @@ class Vector:
 
     def __repr__(self):
         return f"vector {self.name}({self.x}, {self.y})"
+    
+    # Get the vector from radians
+    # https://math.stackexchange.com/questions/180874/convert-angle-radians-to-a-heading-vector#295827
+    @classmethod
+    def from_rad(cls, name: str, r):
+        return cls(name, math.cos(r), math.sin(r))
+
+    # Get radians from the vector
+    # https://math.stackexchange.com/questions/180874/convert-angle-radians-to-a-heading-vector#295827
+    def to_rad(self):
+        return math.atan2(self.x, self.y)
+
+    # Get the vector from degrees
+    @classmethod
+    def from_deg(cls, name: str, deg):
+        r = math.radians(deg)
+        return cls(name, math.cos(r), math.sin(r))
+
+    # Get the degrees from the vector
+    def to_deg(self):
+        return math.degrees(math.atan2(self.x, self.y))
 
 
 # Get the determinant between two vectors
