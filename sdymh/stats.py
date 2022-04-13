@@ -6,6 +6,7 @@ def generate_frequency_table(values):
     values.sort()
     
     value_titles = []
+    headcounts: dict = {}
     frequencies: dict = {}
     
     for value in values:
@@ -18,23 +19,38 @@ def generate_frequency_table(values):
         except KeyError:
             pass
 
+        headcounts.update({value: count})
         frequencies.update({value: count})
-    
+
     value_titles.append("total")
 
     print("value\t\t|", end=" ")
     for title in value_titles:
         print(f"{title}\t|", end=" ")
     
-    print("\nfrequency\t|", end=" ")
+    # Headcount row
+    print("\nheadcount\t|", end=" ")
 
-    total = 0
-    for key in frequencies:
-        r = frequencies[key]
+    total_headcounts = 0
+    for key in headcounts:
+        r = headcounts[key]
         print(f"{r}\t|", end=" ")
-        total += r
+
+        total_headcounts += r
     
-    print(f"{total}\t|")
+    print(f"{total_headcounts}\t|")
+
+    # Frequency row
+    print("frequency\t|", end=" ")
+
+    for key in frequencies:
+        r = headcounts[key]
+        print(f"{r}/{total_headcounts}\t|", end=" ")
+
+    print(f"1\t|") # total frequencies is always 1
+
+    # To generate the table by yourself
+    return (values, headcounts)
 
 
 # Example :
