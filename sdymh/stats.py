@@ -68,3 +68,7 @@ def total_from_percentage(percentage, equal, total_id="total", part_id="x", outp
 # 100/400 = 1/4 = 0.25 = 25/100 = 25%
 def proportion_to_percentage(n, total):
     return (n / total) * 100
+
+# t = (Vf - Vi) / Vi
+def evolution_rate(initial, final):
+    return (final - initial) / initial
